@@ -1,4 +1,3 @@
-, incomplete:false
 <template>
   <h1>this is the todo page</h1>
   <input
