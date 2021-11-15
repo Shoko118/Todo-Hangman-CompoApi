@@ -28,8 +28,8 @@ export default {
   setup() {
     const tries = ref(5);
     const emptyArray = ref([]);
-    const words = ref(["B", "A", "E", "J", "O", "O", "H", "Y", "U", "N"]);
-    const letters = ref(["B", "E", "A", "J", "O", "O", "H", "N", "U", "Y"]);
+    const words = ref(["T", "H", "C"]);
+    const letters = ref(["B", "E", "A", "L", "Q", "O", "H", "C", "O", "T"]);
 
     // computed
     const guessWords = computed(() => {
