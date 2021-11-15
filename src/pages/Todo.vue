@@ -29,6 +29,7 @@
     {{ todo.list }}
     <button @click.prevent="removeTodos(index)">X</button>
     <input type="checkbox" v-model="todo.completed" />
+    <button @click.prevent="undoBt(index)">Undo</button>
   </div>
   <!-- select options============== -->
   <select name="Filter" v-model="filters">
@@ -47,6 +48,7 @@ export default {
     const newList = ref("");
     const newRating = ref(1);
     let deleteArray = ref([]);
+    const correctArray = ref([]);
     const filters = ref("All");
     const todos = ref([
       { rating: 1, list: "swimming", completed: false, incomplete: false },
@@ -88,6 +90,11 @@ export default {
       deleteArray.value = [];
     }
 
+    function undoBt(index) {
+      todos.value.push(deleteArray.value[index]);
+      deleteArray.value.splice(index, 1);
+    }
+
     return {
       newList,
       newRating,
@@ -98,6 +105,8 @@ export default {
       addButton,
       removeTodos,
       undoDeletedTodos,
+      undoBt,
+      correctArray,
     };
   },
 };
