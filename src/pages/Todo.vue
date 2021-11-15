@@ -51,9 +51,9 @@ export default {
     const correctArray = ref([]);
     const filters = ref("All");
     const todos = ref([
-      { rating: 1, list: "swimming", completed: false, incomplete: false },
-      { rating: 2, list: "basketball", completed: false, incomplete: false },
-      { rating: 3, list: "badminton", completed: false, incomplete: false },
+      { rating: 1, list: "swimming", completed: false },
+      { rating: 2, list: "basketball", completed: false },
+      { rating: 3, list: "badminton", completed: false },
     ]);
 
     // computed ============
