@@ -29,7 +29,9 @@
     {{ todo.list }}
     <button @click.prevent="removeTodos(index)">X</button>
     <input type="checkbox" v-model="todo.completed" />
-    <button @click.prevent="undoBt(index)">Undo</button>
+    <button v-if="todos.length > 3" @dblclick.prevent="undoBt(index)">
+      Undo
+    </button>
   </div>
   <!-- select options============== -->
   <select name="Filter" v-model="filters">
@@ -93,6 +95,8 @@ export default {
     function undoBt(index) {
       todos.value.push(deleteArray.value[index]);
       deleteArray.value.splice(index, 1);
+      if (todos.value.length > 3)
+        return alert("please enter a task", newList.value);
     }
 
     return {
